@@ -3,11 +3,12 @@ package com.itamar.annotationdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortune implements FortuneService {
+public class DatabaseFortuneService implements FortuneService {
 
 	@Override
 	public String getFortune() {
-		return "have a great day";
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

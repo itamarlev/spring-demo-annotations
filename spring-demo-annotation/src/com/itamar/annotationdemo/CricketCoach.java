@@ -1,9 +1,24 @@
 package com.itamar.annotationdemo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CricketCoach implements Coach {
 
 	private FortuneService fortuneService;
+	
+	@Value("${foo.email.amdocs}")
+	private String email;
+	
+	public String getEmail() {
+		return email;
+	}
 
+	@Autowired
+	@Qualifier("randomFortuneFromFileService")
 	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
